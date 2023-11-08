@@ -1,0 +1,32 @@
+[2023-11-07 21:05:31] [ WARN ] [BD:43] Versión del archivo de base de datos no soportada ó encabezado de archivo invalido en archivo "C:/Users/flopp/C21023ClinicaOdontologica.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/flopp/C21023ClinicaOdontologica.mv.db" [90048-214]
+[2023-11-07 21:34:48] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 21:44:51] [ WARN ] [BD:43] La base de datos puede que ya esté siendo utilizada: "C:/Users/flopp/C21023ClinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/flopp/C21023ClinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2023-11-07 21:45:15] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 21:50:39] [ INFO ] [PacienteDAOH2:82] iniciando las operaciones de : eliminar por id 1
+[2023-11-07 21:50:39] [ INFO ] [PacienteDAOH2:51] iniciando las operaciones de : buscado por id 1
+[2023-11-07 21:50:39] [ INFO ] [DomicilioDAOH2:43] iniciando las operaciones de buscar un domicilio con ID: 1
+[2023-11-07 21:50:39] [ INFO ] [DomicilioDAOH2:70] iniciando las operaciones de eliminar un domicilio con ID: 1
+[2023-11-07 22:18:05] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 22:19:30] [ INFO ] [PacienteDAOH2:82] iniciando las operaciones de : eliminar por id 3
+[2023-11-07 22:19:30] [ ERROR] [PacienteDAOH2:98] La base de datos puede que ya esté siendo utilizada: "C:/Users/flopp/C21023ClinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/flopp/C21023ClinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2023-11-07 22:20:29] [ INFO ] [PacienteDAOH2:82] iniciando las operaciones de : eliminar por id 3
+[2023-11-07 22:20:29] [ INFO ] [PacienteDAOH2:51] iniciando las operaciones de : buscado por id 3
+[2023-11-07 22:20:29] [ INFO ] [DomicilioDAOH2:43] iniciando las operaciones de buscar un domicilio con ID: 3
+[2023-11-07 22:20:29] [ INFO ] [DomicilioDAOH2:70] iniciando las operaciones de eliminar un domicilio con ID: 3
+[2023-11-07 22:39:44] [ INFO ] [PacienteDAOH2:82] iniciando las operaciones de : eliminar por id 10
+[2023-11-07 22:39:44] [ INFO ] [PacienteDAOH2:51] iniciando las operaciones de : buscado por id 10
+[2023-11-07 22:39:44] [ ERROR] [PacienteDAOH2:98] Cannot invoke "com.clinicaodontologica.Clinica.Odontologica.model.Paciente.getDomicilio()" because "paciente" is null
+[2023-11-07 22:47:08] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 22:54:54] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 22:56:05] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:02:19] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:03:01] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:03:25] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:04:29] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:05:36] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:05:37] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:07:30] [ INFO ] [BD:40] datos cargados con exito
+[2023-11-07 23:13:42] [ INFO ] [BD:40] datos cargados con exito
