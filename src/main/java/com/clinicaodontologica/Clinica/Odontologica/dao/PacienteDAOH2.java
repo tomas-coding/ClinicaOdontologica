@@ -5,14 +5,17 @@ import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PacienteDAOH2 implements iDao<Paciente>{
     private static final Logger logger= Logger.getLogger(PacienteDAOH2.class);
-    private static  final String SQL_INSERT="INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES(?,?,?,?,?)";
+    private static  final String SQL_INSERT="INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID, EMAIL) VALUES(?,?,?,?,?,?)";
     private static final String SQL_SELECT_BY="SELECT * FROM PACIENTES WHERE ID=?";
     private static final String SQL_DELETE_BY_ID="DELETE FROM PACIENTES WHERE ID=?";
-    private static final String SQL_UPDATE="UPDATE PACIENTES SET NOMBRE=?, APELLIDO=?, CEDULA=?, FECHA_INGRESO=?, DOMICILIO_ID=? WHERE ID =?";
+    private static final String SQL_UPDATE="UPDATE PACIENTES SET NOMBRE=?, APELLIDO=?, CEDULA=?, FECHA_INGRESO=?, DOMICILIO_ID=?, EMAIL=? WHERE ID =?";
+    private static final String SQL_SELECT_ALL="SELECT * FROM PACIENTES";
+    private static final String SQL_SELECT_BY_EMAIL="SELECT * FROM PACIENTES WHERE EMAIL=?";
     @Override
     public Paciente guardar(Paciente paciente) {
         logger.info("guardando paciente");
@@ -27,6 +30,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
             psInsert.setString(3, paciente.getCedula());
             psInsert.setDate(4, Date.valueOf(paciente.getFechaIngreso()));
             psInsert.setInt(5,domicilio.getId());
+            psInsert.setString(6, paciente.getEmail());
             psInsert.execute(); //en teoria si hay claves se generan
             ResultSet clave= psInsert.getGeneratedKeys();
             while (clave.next()){
@@ -61,7 +65,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
             DomicilioDAOH2 daoAux= new DomicilioDAOH2();
             while (rs.next()){
                 domicilio= daoAux.buscar(rs.getInt(6));
-                paciente= new Paciente(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),domicilio);
+                paciente= new Paciente(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),domicilio,rs.getString(7));
 
             }
 
@@ -123,8 +127,8 @@ public class PacienteDAOH2 implements iDao<Paciente>{
             ps_Update.setString(3, paciente.getCedula());
             ps_Update.setDate(4,Date.valueOf(paciente.getFechaIngreso()));
             ps_Update.setInt(5,paciente.getDomicilio().getId());
-
-            ps_Update.setInt(6,paciente.getId());
+            ps_Update.setString(6,paciente.getEmail());
+            ps_Update.setInt(7,paciente.getId());
             ps_Update.execute();
 
 
@@ -142,9 +146,24 @@ public class PacienteDAOH2 implements iDao<Paciente>{
 
     @Override
     public List<Paciente> buscarTodos() {
-        logger.info("iniciando las operaciones de : ");
+        logger.info("iniciando las operaciones de : listado de un paciente ");
         Connection connection= null;
+        List<Paciente> pacientes= new ArrayList<>();
+        Paciente paciente=null;
+        Domicilio domicilio=null;
         try{
+
+            connection= BD.getConnection();
+            Statement statement= connection.createStatement();
+            ResultSet rs= statement.executeQuery(SQL_SELECT_ALL);
+            DomicilioDAOH2 daoAux= new DomicilioDAOH2();
+            while(rs.next()){
+                domicilio= daoAux.buscar(rs.getInt(6));
+                paciente= new Paciente(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),domicilio,rs.getString(7));
+                pacientes.add(paciente);
+            }
+
+
 
         }catch (Exception e){
             logger.error(e.getMessage());
@@ -155,6 +174,36 @@ public class PacienteDAOH2 implements iDao<Paciente>{
                 logger.error(ex.getMessage());
             }
         }
-        return null;
+        return pacientes;
+    }
+
+    @Override
+    public Paciente buscarPorString(String valor) {
+        logger.info("iniciando las operaciones de : buscado por email "+valor);
+        Connection connection= null;
+        Paciente paciente=null;
+        Domicilio domicilio=null;
+        try{
+            connection= BD.getConnection();
+            PreparedStatement psSelectOne= connection.prepareStatement(SQL_SELECT_BY_EMAIL);
+            psSelectOne.setString(1,valor);
+            ResultSet rs= psSelectOne.executeQuery();
+            DomicilioDAOH2 daoAux= new DomicilioDAOH2();
+            while (rs.next()){
+                domicilio= daoAux.buscar(rs.getInt(6));
+                paciente= new Paciente(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),domicilio,rs.getString(7));
+
+            }
+
+        }catch (Exception e){
+            logger.error(e.getMessage());
+        }finally {
+            try{
+                connection.close();
+            }catch (SQLException ex){
+                logger.error(ex.getMessage());
+            }
+        }
+        return paciente;
     }
 }

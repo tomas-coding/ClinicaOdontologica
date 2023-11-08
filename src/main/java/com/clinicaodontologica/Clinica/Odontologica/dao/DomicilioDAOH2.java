@@ -96,4 +96,9 @@ public class DomicilioDAOH2 implements iDao<Domicilio>{
     public List<Domicilio> buscarTodos() {
         return null;
     }
+
+    @Override
+    public Domicilio buscarPorString(String valor) {
+        return null;
+    }
 }

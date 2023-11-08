@@ -4,12 +4,14 @@ import com.clinicaodontologica.Clinica.Odontologica.dao.PacienteDAOH2;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import com.clinicaodontologica.Clinica.Odontologica.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/paciente")
 public class PacienteController {
     private PacienteService pacienteService;
+
     @Autowired
     public PacienteController(PacienteService pacienteService) {
         this.pacienteService = pacienteService;
@@ -17,6 +19,10 @@ public class PacienteController {
     @GetMapping("/{id}")
     public Paciente buscarPacientePorID(@PathVariable Integer id){
         return pacienteService.buscarPorId(id);
+    }
+    @PostMapping
+    public  Paciente registrarPaciente(@RequestBody Paciente paciente){
+        return pacienteService.guardarPaciente(paciente);
     }
     @PutMapping
     public String actualizarPaciente(@RequestBody Paciente paciente){
@@ -28,8 +34,11 @@ public class PacienteController {
             return "paciente no encontrado";
         }
     }
-    @DeleteMapping ("/delete/{id}")
-    public void borrarPaciente(@PathVariable Integer id){
-        pacienteService.eliminarPorId(id);
+    @GetMapping
+    public String buscarPacientePorCorreo(Model model, @RequestParam("email") String correo){
+        Paciente paciente= pacienteService.buscarPorEmail(correo);
+        model.addAttribute("nombre",paciente.getNombre());
+        model.addAttribute("apellido",paciente.getApellido());
+        return "index";
     }
 }

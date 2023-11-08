@@ -92,4 +92,9 @@ public class OdontologoDAOH2 implements iDao<Odontologo>{
         return listaOdontologos;
 
     }
+
+    @Override
+    public Odontologo buscarPorString(String valor) {
+        return null;
+    }
 }

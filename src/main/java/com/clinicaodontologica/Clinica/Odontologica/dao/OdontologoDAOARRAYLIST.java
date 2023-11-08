@@ -35,4 +35,9 @@ public class OdontologoDAOARRAYLIST implements iDao<Odontologo> {
     public List<Odontologo> buscarTodos() {
         return listaOdontologos;
     }
+
+    @Override
+    public Odontologo buscarPorString(String valor) {
+        return null;
+    }
 }

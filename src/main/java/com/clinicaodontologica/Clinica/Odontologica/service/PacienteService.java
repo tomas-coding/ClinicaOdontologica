@@ -5,6 +5,8 @@ import com.clinicaodontologica.Clinica.Odontologica.dao.iDao;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PacienteService {
     private iDao<Paciente> pacienteiDao;
@@ -30,6 +32,12 @@ public class PacienteService {
     }
     public void actualizarPaciente(Paciente paciente){
         pacienteiDao.actualizar(paciente);
+    }
+    public List<Paciente> obtenerTodosLosPacientes(){
+        return pacienteiDao.buscarTodos();
+    }
+    public Paciente buscarPorEmail(String correo){
+        return pacienteiDao.buscarPorString(correo);
     }
 
 
