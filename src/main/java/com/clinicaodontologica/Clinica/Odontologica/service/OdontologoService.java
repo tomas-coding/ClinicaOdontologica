@@ -16,7 +16,7 @@ public class OdontologoService {
 
       public OdontologoService()
       {
-            // this.odontologoiDao = new OdontologoDAOH2();
+             this.odontologoiDao = new OdontologoDAOH2();
       }
 
       public void setEstrategiaDePersistencia(String clave)
@@ -44,4 +44,8 @@ public class OdontologoService {
       {
             return odontologoiDao.buscar(id);
       }
+      public void eliminarPorId(Integer id) {
+            odontologoiDao.eliminar(id);
+      }
+      public void actualizarOdontologo (Odontologo odontologo){odontologoiDao.actualizar(odontologo);}
 }

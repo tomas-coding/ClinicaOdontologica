@@ -1,5 +1,6 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
+import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -47,6 +48,20 @@ public class OdontologoController {
       public Odontologo registrarOdontologo(@RequestBody Odontologo odontologo)
       {
             return odontologoService.guardarOdontologo(odontologo);
+      }
+      @DeleteMapping("/eliminar/{id}")
+      public void eliminarOdontologo(@PathVariable Integer id){
+            odontologoService.eliminarPorId(id);
+      }
+      @PutMapping ("/actualizar")
+      public String actualizarOdontologo(@RequestBody Odontologo odontologo){
+            Odontologo odontologoBuscado= odontologoService.buscarPorId(odontologo.getId());
+            if(odontologoBuscado!=null) {
+                  odontologoService.actualizarOdontologo(odontologo);
+                  return "paciente actualizado";
+            }else{
+                  return "paciente no encontrado";
+            }
       }
 
 

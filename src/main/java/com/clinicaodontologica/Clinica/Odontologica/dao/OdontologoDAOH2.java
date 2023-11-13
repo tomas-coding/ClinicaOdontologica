@@ -90,6 +90,7 @@ public class OdontologoDAOH2 implements iDao<Odontologo>
                   PreparedStatement psDeleteOne= connection.prepareStatement(SQL_DELETE_BY_ID);
                   psDeleteOne.setInt(1,id);
                   psDeleteOne.execute();
+                  logger.info("Odontologo con Id: " + id + " eliminado con exito");
             }catch (Exception e){
                   logger.error(e.getMessage());
             }finally {
