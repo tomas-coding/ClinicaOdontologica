@@ -6,6 +6,7 @@ window.addEventListener('load', function () {
     const formulario = document.querySelector('#update_odontologo_form');
 
     formulario.addEventListener('submit', function (event) {
+        event.preventDefault();
         let odontologoId = document.querySelector('#odontologo_id').value;
 
         //creamos un JSON que tendrá los datos de la película
@@ -21,7 +22,7 @@ window.addEventListener('load', function () {
 
         //invocamos utilizando la función fetch la API peliculas con el método PUT que modificará
         //la película que enviaremos en formato JSON
-        const url = '/odontologo';
+        const url = '/odontologo/actualizar';
         const settings = {
             method: 'PUT',
             headers: {

@@ -41,3 +41,118 @@
 [2023-11-12 21:01:43] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
 [2023-11-12 21:01:43] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
 [2023-11-12 21:01:43] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:03:39] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 22:03:52] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:03:52] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:03:52] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:22:21] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:22:21] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:22:21] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:22:24] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 1
+[2023-11-12 22:26:13] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:26:13] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:26:13] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:26:38] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:26:38] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:26:38] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:27:02] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:27:02] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:27:02] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:27:03] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:41:41] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:41:42] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 22:41:43] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 1
+[2023-11-12 22:44:18] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:44:18] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:44:18] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:44:22] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:44:22] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:44:22] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:47:47] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:49:31] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 22:49:32] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 22:49:34] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 22:49:35] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:49:35] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:49:36] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:49:48] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:49:48] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:49:48] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:49:50] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:49:50] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:49:58] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 22:50:07] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:50:07] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:50:07] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:50:11] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:50:11] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:50:11] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:50:19] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 22:50:30] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:50:30] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:50:30] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:51:24] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:51:24] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:51:24] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:56:55] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 22:58:32] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:58:32] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:58:32] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:58:36] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:58:36] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:58:36] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 22:59:02] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:59:14] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 2
+[2023-11-12 22:59:14] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 22:59:14] [ INFO ] [OdontologoDAOH2:108] iniciando la operacion de actualizado de un paciente 
+[2023-11-12 22:59:14] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 22:59:14] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:01:58] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:02:00] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:02:09] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:02:26] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:02:26] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:02:27] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:02:40] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 23:02:41] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 23:02:55] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 3
+[2023-11-12 23:02:55] [ INFO ] [OdontologoDAOH2:108] iniciando la operacion de actualizado de un paciente 
+[2023-11-12 23:03:11] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:03:11] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:03:12] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:09:09] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:09:27] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:09:27] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:09:27] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:10:20] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:10:20] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:10:20] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:10:50] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:10:50] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:10:50] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:19:01] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:19:20] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:19:20] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:19:21] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:19:31] [ INFO ] [OdontologoDAOH2:86] iniciando las operaciones de : eliminar por id 1
+[2023-11-12 23:19:31] [ INFO ] [OdontologoDAOH2:93] Odontologo con Id: 1 eliminado con exito
+[2023-11-12 23:19:43] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:19:43] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:19:44] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:20:20] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:20:20] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:20:20] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:20:23] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:20:23] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:20:23] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:27:18] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:27:31] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:27:31] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:27:31] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:28:19] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:28:19] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:28:19] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:29:09] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:29:56] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:29:56] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:29:57] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito

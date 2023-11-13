@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
-
+    event.preventDefault();
        //creamos un JSON que tendrá los datos de la nueva película
         const formData = {
             matricula: document.querySelector('#matricula').value,
@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
         };
         //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
         //la película que enviaremos en formato JSON
-        const url = '/odontologo';
+        const url = '/odontologo/guardar';
         const settings = {
             method: 'POST',
             headers: {
