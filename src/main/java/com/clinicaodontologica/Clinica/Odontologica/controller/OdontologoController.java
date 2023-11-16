@@ -64,5 +64,11 @@ public class OdontologoController {
             }
       }
 
+      @GetMapping("/buscar/atributo")
+      public Odontologo buscarPorString( @RequestParam String str )
+      {
+            return odontologoService.buscarPorString(str);
+      }
+
 
 }

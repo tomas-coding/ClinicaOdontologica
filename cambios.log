@@ -156,3 +156,17 @@
 [2023-11-12 23:29:56] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
 [2023-11-12 23:29:56] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
 [2023-11-12 23:29:57] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-16 15:43:37] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-16 15:46:15] [ INFO ] [OdontologoDAOH2:23] guardando odontologo
+[2023-11-16 15:46:15] [ INFO ] [OdontologoDAOH2:37]  odontologo guardado
+[2023-11-16 15:46:16] [ INFO ] [OdontologoDAOH2:23] guardando odontologo
+[2023-11-16 15:46:16] [ INFO ] [OdontologoDAOH2:37]  odontologo guardado
+[2023-11-16 15:47:34] [ INFO ] [OdontologoDAOH2:133] iniciando operacion de listar los odontologos
+[2023-11-16 15:47:34] [ INFO ] [OdontologoDAOH2:149] se han enlistado correctamente los datos
+[2023-11-16 15:47:34] [ INFO ] [OdontologoDAOH2:157] conexion cerrada con exito
+[2023-11-16 15:52:15] [ INFO ] [OdontologoDAOH2:169] iniciando la operacion buscado por string: Javier
+[2023-11-16 15:52:39] [ INFO ] [OdontologoDAOH2:169] iniciando la operacion buscado por string: 
+[2023-11-16 15:52:44] [ INFO ] [OdontologoDAOH2:169] iniciando la operacion buscado por string: Javier
+[2023-11-16 15:52:55] [ INFO ] [OdontologoDAOH2:169] iniciando la operacion buscado por string: Tomas
+[2023-11-16 15:52:59] [ INFO ] [OdontologoDAOH2:169] iniciando la operacion buscado por string: Tom
+[2023-11-16 15:53:12] [ INFO ] [OdontologoDAOH2:169] iniciando la operacion buscado por string: 5462

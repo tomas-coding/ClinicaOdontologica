@@ -35,8 +35,6 @@ public class OdontologoDAOH2 implements iDao<Odontologo>
                         odontologo.setId(clave.getInt(1));
                   }
                   logger.info(" odontologo guardado");
-
-
             }catch (Exception e){
                   logger.error(e.getMessage());
             }finally {

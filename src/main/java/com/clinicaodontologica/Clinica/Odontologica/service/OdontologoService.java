@@ -35,6 +35,7 @@ public class OdontologoService {
       {
             return odontologoiDao.guardar(odontologo);
       }
+
       public List<Odontologo> listarOdontologos()
       {
             return odontologoiDao.buscarTodos();
@@ -44,8 +45,17 @@ public class OdontologoService {
       {
             return odontologoiDao.buscar(id);
       }
+
       public void eliminarPorId(Integer id) {
             odontologoiDao.eliminar(id);
       }
-      public void actualizarOdontologo (Odontologo odontologo){odontologoiDao.actualizar(odontologo);}
+
+      public void actualizarOdontologo (Odontologo odontologo){
+            odontologoiDao.actualizar(odontologo);
+      }
+
+      public Odontologo buscarPorString( String cadena )
+      {
+            return odontologoiDao.buscarPorString(cadena);
+      }
 }
