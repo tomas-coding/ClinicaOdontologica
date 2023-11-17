@@ -2,6 +2,8 @@ package com.clinicaodontologica.Clinica.Odontologica.controller;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.clinicaodontologica.Clinica.Odontologica.service.*;
@@ -49,19 +51,32 @@ public class OdontologoController {
       {
             return odontologoService.guardarOdontologo(odontologo);
       }
+
       @DeleteMapping("/eliminar/{id}")
-      public void eliminarOdontologo(@PathVariable Integer id){
-            odontologoService.eliminarPorId(id);
-      }
-      @PutMapping ("/actualizar")
-      public String actualizarOdontologo(@RequestBody Odontologo odontologo){
-            Odontologo odontologoBuscado= odontologoService.buscarPorId(odontologo.getId());
-            if(odontologoBuscado!=null) {
-                  odontologoService.actualizarOdontologo(odontologo);
-                  return "paciente actualizado";
-            }else{
-                  return "paciente no encontrado";
+      public ResponseEntity eliminarOdontologo(@PathVariable Integer id)
+      {
+            if( odontologoService.buscarPorId(id) == null ){
+                  return ResponseEntity.badRequest().body("No se ha encontrado el odontologo");
+            } else {
+                  odontologoService.eliminarPorId(id);
+                  return ResponseEntity.ok("Eliminado!");
             }
+      }
+
+      @PutMapping ("/actualizar")
+      public ResponseEntity actualizarOdontologo(@RequestBody Odontologo odontologo)
+      {
+            Odontologo odontologoBuscado= odontologoService.buscarPorId(odontologo.getId());
+            ResponseEntity response = null;
+
+            if(odontologoBuscado == null) {
+                  response = new ResponseEntity<>(HttpStatus.NOT_FOUND);      // este objeto "ResponseEntity" no contendra un Body
+            }else{
+                  odontologoService.actualizarOdontologo(odontologo);
+                  response = new ResponseEntity( odontologo, HttpStatus.OK ); 
+            }
+
+            return response;
       }
 
       @GetMapping("/buscar/atributo")
