@@ -1,68 +1,46 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
-import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.clinicaodontologica.Clinica.Odontologica.service.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/odontologo")
 public class OdontologoController {
+      //relacion de asociacion con el servicio
+      @Autowired
       private OdontologoService odontologoService;
 
-      @Autowired
-      public OdontologoController()
-      {
-            this.odontologoService = new OdontologoService();
-      }
 
-      // public Odontologo buscarOdontologoPorId(@PathVariable Integer id)
-      @GetMapping("/buscar/{id}")
-      public Odontologo buscarOdontologoPorId(@PathVariable Integer id)
-      {
-            return odontologoService.buscarPorId(id);
+      @PostMapping
+      public ResponseEntity<Odontologo> registrarOdontologo(@RequestBody Odontologo odontologo){
+            return ResponseEntity.ok(odontologoService.registrarOdontologo(odontologo));
       }
-
-      @GetMapping("/listar")
-      public List<Odontologo> listarTodos()
-      {
-            return odontologoService.listarOdontologos();
+      @GetMapping("/todos")
+      public ResponseEntity<List<Odontologo>> buscarTodos(){
+            return ResponseEntity.ok(odontologoService.listarTodos());
       }
-
-      // Metodo de Testeo para establecer el tipo de implementacion 
-      // de la persistencia (H2: SQL // ArrayList: En Memoria)
-      // Recibo por parametro (url) un string.
-      // Este debe tener uno de los siguientes valores:
-      //    1. "h2"
-      //    2. "memory"
-      // *** Preguntar si esta bien pasar por parametro de tipo "path" en metodos POST * * * * *
-      @PostMapping("/persistencia/{clave}")
-      public void registrarOdontologo(@PathVariable String clave)
-      {
-            odontologoService.setEstrategiaDePersistencia(clave);
-      }
-
-      @PostMapping("/guardar")
-      public Odontologo registrarOdontologo(@RequestBody Odontologo odontologo)
-      {
-            return odontologoService.guardarOdontologo(odontologo);
-      }
-      @DeleteMapping("/eliminar/{id}")
-      public void eliminarOdontologo(@PathVariable Integer id){
-            odontologoService.eliminarPorId(id);
-      }
-      @PutMapping ("/actualizar")
-      public String actualizarOdontologo(@RequestBody Odontologo odontologo){
-            Odontologo odontologoBuscado= odontologoService.buscarPorId(odontologo.getId());
-            if(odontologoBuscado!=null) {
+      @PutMapping
+      public ResponseEntity<String> actualizarOdontologo(@RequestBody Odontologo odontologo){
+            Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(odontologo.getId());
+            if(odontologoBuscado.isPresent()){
                   odontologoService.actualizarOdontologo(odontologo);
-                  return "paciente actualizado";
-            }else{
-                  return "paciente no encontrado";
+                  return ResponseEntity.ok("Odontologo actualizado");
+            }
+            else{
+                  return ResponseEntity.badRequest().body("Odontologo no encontrado");
             }
       }
-
+      @GetMapping("/{id}")
+      public ResponseEntity<Optional<Odontologo>> buscarPorID(@PathVariable Long id){
+            return ResponseEntity.ok(odontologoService.buscarPorId(id));
+      }
+      @GetMapping("/busqueda/{matricula}")
+      public ResponseEntity<Optional<Odontologo>> buscarPorMatricula(@PathVariable String matricula){
+            return ResponseEntity.ok(odontologoService.buscarPorMatricula(matricula));
+      }
 
 }

@@ -1,44 +1,58 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 
-import com.clinicaodontologica.Clinica.Odontologica.dao.PacienteDAOH2;
+
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import com.clinicaodontologica.Clinica.Odontologica.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/paciente")
 public class PacienteController {
+    @Autowired
     private PacienteService pacienteService;
 
-    @Autowired
-    public PacienteController(PacienteService pacienteService) {
-        this.pacienteService = pacienteService;
-    }
+
     @GetMapping("/{id}")
-    public Paciente buscarPacientePorID(@PathVariable Integer id){
-        return pacienteService.buscarPorId(id);
+    public ResponseEntity<Optional<Paciente>> buscarPacientePorID(@PathVariable Long id){
+        return ResponseEntity.ok(pacienteService.buscarPacientePorID(id));
     }
     @PostMapping
-    public  Paciente registrarPaciente(@RequestBody Paciente paciente){
-        return pacienteService.guardarPaciente(paciente);
+    public  ResponseEntity<Paciente> registrarPaciente(@RequestBody Paciente paciente){
+        return ResponseEntity.ok(pacienteService.registrarPaciente(paciente));
     }
     @PutMapping
-    public String actualizarPaciente(@RequestBody Paciente paciente){
-        Paciente pacienteBuscado= pacienteService.buscarPorId(paciente.getId());
-        if(pacienteBuscado!=null) {
+    public ResponseEntity<String> actualizarPaciente(@RequestBody Paciente paciente){
+        Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(paciente.getId());
+        if(pacienteBuscado.isPresent()) {
             pacienteService.actualizarPaciente(paciente);
-            return "paciente actualizado";
+            return ResponseEntity.ok("paciente actualizado");
         }else{
-            return "paciente no encontrado";
+            return ResponseEntity.badRequest().body("paciente no encontrado");
         }
     }
-    @GetMapping
-    public String buscarPacientePorCorreo(Model model, @RequestParam("email") String correo){
-        Paciente paciente= pacienteService.buscarPorEmail(correo);
-        model.addAttribute("nombre",paciente.getNombre());
-        model.addAttribute("apellido",paciente.getApellido());
-        return "index";
+    @GetMapping("/buscar/{email}")
+    public ResponseEntity<Paciente> buscarPacientePorCorreo(@PathVariable String correo){
+        Optional<Paciente> pacienteBuscado= pacienteService.buscarPorCorreo(correo);
+        if(pacienteBuscado.isPresent()) {
+
+            return ResponseEntity.ok(pacienteBuscado.get());
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> elimninarPaciente(@PathVariable Long id){
+        Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(id);
+        if(pacienteBuscado.isPresent()){
+            pacienteService.eliminarPaciente(id);
+            return ResponseEntity.ok("Eliminado con exito");
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+
     }
 }

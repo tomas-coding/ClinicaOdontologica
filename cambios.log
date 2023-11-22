@@ -156,3 +156,20 @@
 [2023-11-12 23:29:56] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
 [2023-11-12 23:29:56] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
 [2023-11-12 23:29:57] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:33:57] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-12 23:34:14] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:34:14] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:34:14] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-12 23:36:35] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-12 23:36:35] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-12 23:36:35] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-21 20:29:11] [ INFO ] [BD:30] datos cargados con exito
+[2023-11-21 20:29:53] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-21 20:29:53] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-21 20:29:53] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito
+[2023-11-21 20:30:00] [ INFO ] [OdontologoDAOH2:55] iniciando la operacion de buscado por id 1
+[2023-11-21 20:30:08] [ INFO ] [OdontologoDAOH2:86] iniciando las operaciones de : eliminar por id 1
+[2023-11-21 20:30:08] [ INFO ] [OdontologoDAOH2:93] Odontologo con Id: 1 eliminado con exito
+[2023-11-21 20:30:11] [ INFO ] [OdontologoDAOH2:135] iniciando operacion de listar los odontologos
+[2023-11-21 20:30:12] [ INFO ] [OdontologoDAOH2:151] se han enlistado correctamente los datos
+[2023-11-21 20:30:12] [ INFO ] [OdontologoDAOH2:159] conexion cerrada con exito

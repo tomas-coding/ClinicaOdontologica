@@ -1,44 +1,33 @@
 package com.clinicaodontologica.Clinica.Odontologica.service;
-
-import com.clinicaodontologica.Clinica.Odontologica.dao.PacienteDAOH2;
-import com.clinicaodontologica.Clinica.Odontologica.dao.iDao;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
+import com.clinicaodontologica.Clinica.Odontologica.repository.PacienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PacienteService {
-    private iDao<Paciente> pacienteiDao;
+    @Autowired
+    private PacienteRepository pacienteRepository;
 
-
-
-    public PacienteService() {
-        pacienteiDao= new PacienteDAOH2();
-    }
-    /* public PacienteService(iDao<Paciente> pacienteiDao) {
-        this.pacienteiDao = pacienteiDao;
-    }*/
-
-    //se generan manuales los metodos
-    public Paciente guardarPaciente(Paciente paciente){
-        return pacienteiDao.guardar(paciente);
-    }
-    public Paciente buscarPorId(Integer id){
-        return pacienteiDao.buscar(id);
-    }
-    public void eliminarPorId(Integer id){
-        pacienteiDao.eliminar(id);
+    public Paciente registrarPaciente(Paciente paciente){
+        return  pacienteRepository.save(paciente);
     }
     public void actualizarPaciente(Paciente paciente){
-        pacienteiDao.actualizar(paciente);
+        pacienteRepository.save(paciente);
     }
-    public List<Paciente> obtenerTodosLosPacientes(){
-        return pacienteiDao.buscarTodos();
+    public void eliminarPaciente(Long id){
+        pacienteRepository.deleteById(id);
     }
-    public Paciente buscarPorEmail(String correo){
-        return pacienteiDao.buscarPorString(correo);
+    public Optional<Paciente> buscarPacientePorID(Long id){
+        return pacienteRepository.findById(id);
     }
-
-
+    public Optional<Paciente> buscarPorCorreo(String email){
+        return pacienteRepository.findByEmail(email);
+    }
+    public List<Paciente> listarTodos(){
+        return pacienteRepository.findAll();
+    }
 }
