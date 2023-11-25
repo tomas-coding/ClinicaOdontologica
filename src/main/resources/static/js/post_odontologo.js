@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
         };
         //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
         //la película que enviaremos en formato JSON
-        const url = '/odontologo/guardar';
+        const url = '/odontologo';
         const settings = {
             method: 'POST',
             headers: {

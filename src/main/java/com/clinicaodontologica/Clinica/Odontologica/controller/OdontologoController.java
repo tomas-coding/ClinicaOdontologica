@@ -1,6 +1,7 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.clinicaodontologica.Clinica.Odontologica.service.*;
@@ -36,6 +37,7 @@ public class OdontologoController {
       }
       @GetMapping("/{id}")
       public ResponseEntity<Optional<Odontologo>> buscarPorID(@PathVariable Long id){
+
             return ResponseEntity.ok(odontologoService.buscarPorId(id));
       }
       @GetMapping("/busqueda/{matricula}")
@@ -43,4 +45,13 @@ public class OdontologoController {
             return ResponseEntity.ok(odontologoService.buscarPorMatricula(matricula));
       }
 
+      @DeleteMapping("{id}")
+      public ResponseEntity<String> eliminarPorId (@PathVariable Long id){
+            Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
+            if (odontologoBuscado.isPresent()){
+                  odontologoService.eliminarOdontologo(id);
+                  return ResponseEntity.ok("Odontologo eliminado con exito");
+            }
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Odontologo no encontrado");
+      }
 }

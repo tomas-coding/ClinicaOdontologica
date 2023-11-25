@@ -30,4 +30,5 @@ public class OdontologoService {
       public Optional<Odontologo> buscarPorMatricula(String matricula){
             return odontologoRepository.findByMatricula(matricula);
       }
+
 }

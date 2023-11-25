@@ -1,6 +1,6 @@
 function deleteBy(id) {
   // Construir la URL para la solicitud DELETE
-  const url = '/odontologo/eliminar/' + id;
+  const url = '/odontologo/'+ id;
 
   // Configuración de la solicitud
   const settings = {
