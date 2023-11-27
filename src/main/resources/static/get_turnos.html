@@ -24,6 +24,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="./post_pacientes.html">Alta</a></li>
+                        <li><a class="dropdown-item" href="./get_pacientes.html">Listar</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -31,8 +32,18 @@
                         Odontologo
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./post_odontologos.html">Alta</a></li>
-                        <li><a class="dropdown-item" href="./get_odontologos.html">Listar</a></li>
+                        <li><a class="dropdown-item" href="post_odontologos.html">Alta</a></li>
+                        <li><a class="dropdown-item" href="get_odontologos.html">Listar</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Turnos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./post_turnos.html">Alta</a></li>
+
                     </ul>
                 </li>
 
@@ -42,10 +53,10 @@
     </div>
 </nav>
 
-<div id="div_paciente_table">
-    <h1>Listado de Pacientes</h1>
+<div id="div_turno_table">
+    <h1>Listado de Turnos</h1>
     <div class="row col-md-6 table-responsive">
-        <table id="pacienteTable" class="table table-striped">
+        <table id="turnoTable" class="table table-striped">
             <thead>
             <tr>
                 <th>Id</th>
@@ -54,7 +65,7 @@
                 <th>Apellido</th>
             </tr>
             </thead>
-            <tbody id="pacienteTableBody">
+            <tbody id="turnoTableBody">
 
             </tbody>
         </table>
@@ -63,11 +74,11 @@
 <div class="row">
     <div class="col-sm-6" style="display: none;
 											background-color:#e6fffa; padding:10px; border-radius:3px"
-         id="div_paciente_updating">
-        <form id="update_paciente_form">
+         id="div_turno_updating">
+        <form id="update_turno_form">
             <div class="form-group">
                 <label >Id:</label>
-                <input type="text" class="form-control" id="paciente_id" readonly>
+                <input type="text" class="form-control" id="turno_id" readonly>
             </div>
             <div class="form-group">
                 <label >Matricula:</label>
@@ -92,8 +103,8 @@
 <hr>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/js/get_paciente.js"></script>
-<script type="text/javascript" src="/js/put_paciente.js"></script>
-<script type="text/javascript" src="/js/delete_paciente.js"></script>
+<script type="text/javascript" src="/js/get_turno.js"></script>
+<script type="text/javascript" src="/js/put_turno.js"></script>
+<script type="text/javascript" src="/js/delete_turno.js"></script>
 </body>
 </html>
