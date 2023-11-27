@@ -20,6 +20,7 @@ public class OdontologoController {
       public ResponseEntity<Odontologo> registrarOdontologo(@RequestBody Odontologo odontologo){
             return ResponseEntity.ok(odontologoService.registrarOdontologo(odontologo));
       }
+
       @GetMapping("/todos")
       public ResponseEntity<List<Odontologo>> buscarTodos(){
             return ResponseEntity.ok(odontologoService.listarTodos());

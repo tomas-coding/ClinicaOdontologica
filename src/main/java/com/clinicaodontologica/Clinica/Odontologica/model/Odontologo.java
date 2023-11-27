@@ -24,4 +24,43 @@ public class Odontologo {
     @JsonIgnore
     private Set<Turno> turnos= new HashSet<>();
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public Set<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(Set<Turno> turnos) {
+        this.turnos = turnos;
+    }
 }

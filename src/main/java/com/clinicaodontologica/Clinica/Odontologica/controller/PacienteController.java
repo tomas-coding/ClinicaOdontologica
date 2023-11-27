@@ -1,12 +1,14 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 
 
+import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import com.clinicaodontologica.Clinica.Odontologica.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -54,5 +56,10 @@ public class PacienteController {
             return ResponseEntity.notFound().build();
         }
 
+    }
+
+    @GetMapping("/todos")
+    public ResponseEntity<List<Paciente>> buscarTodos(){
+        return ResponseEntity.ok(pacienteService.listarTodos());
     }
 }

@@ -29,18 +29,42 @@ public class TurnoController {
         this.pacienteService = pacienteService;
         this.odontologoService = odontologoService;
     }
-    @PostMapping
-    public ResponseEntity<TurnoDTO> registrarTurno(@RequestBody Turno turno){
 
-        Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(turno.getPaciente().getId());
-        Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
+
+    @PostMapping
+    public ResponseEntity<TurnoDTO> registrarTurno(@RequestBody TurnoDTO turno){
+
+        Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(turno.getPacienteId());
+        Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologoId());
+
+
         if(pacienteBuscado.isPresent()&&odontologoBuscado.isPresent()){
-            return ResponseEntity.ok(turnoService.guardarTurno(turno));
+            Turno t = new Turno();
+            t.setPaciente(pacienteBuscado.get());
+            t.setOdontologo(odontologoBuscado.get());
+            t.setFechaTurno(turno.getFechaTurno());
+            return ResponseEntity.ok(turnoService.guardarTurno(t));
         }
         else {
-            return ResponseEntity.badRequest().build();
+            // Preguntar al profe
+            ResponseEntity<TurnoDTO> f = new ResponseEntity<>(new TurnoDTO(), HttpStatus.NOT_FOUND);
+            return f;
         }
     }
+
+    // @PostMapping
+    // public ResponseEntity<TurnoDTO> registrarTurno(@RequestBody Turno turno){
+    //
+    //     Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(turno.getPaciente().getId());
+    //     Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
+    //     if(pacienteBuscado.isPresent()&&odontologoBuscado.isPresent()){
+    //         return ResponseEntity.ok(turnoService.guardarTurno(turno));
+    //     }
+    //     else {
+    //         return ResponseEntity.badRequest().build();
+    //     }
+    // }
+
     @GetMapping
     public ResponseEntity<List<TurnoDTO>> buscarTodos(){
         return ResponseEntity.ok(turnoService.buscarTodos());
