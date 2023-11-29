@@ -26,5 +26,8 @@ public class DatosInicialesSecurity implements ApplicationRunner {
         Usuario usuarioInsertar= new Usuario("Jorgito","jpereyra00","jorge.pereyra@digitalhouse.com",passCifrado, UsuarioRole.ROLE_ADMIN);
         usuarioRepository.save(usuarioInsertar);
 
+        Usuario usuarioUser= new Usuario("Tomi","tomilovato","tomi@gmail.com",passCifrado, UsuarioRole.ROLE_USER);
+        usuarioRepository.save(usuarioUser);
+
     }
 }
