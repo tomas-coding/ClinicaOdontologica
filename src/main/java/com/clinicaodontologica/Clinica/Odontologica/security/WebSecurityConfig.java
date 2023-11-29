@@ -46,9 +46,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                  .antMatchers("/post_turnos.html").hasRole("ADMIN")
                  .antMatchers("/get_odontologos.html").hasRole("ADMIN")
                  .antMatchers("/get_pacientes.html").hasRole("ADMIN")
-                 .antMatchers("/get_turnos.html").hasRole("ADMIN")
+                 .antMatchers("/get_turnos.html").hasAnyRole("ADMIN","USER")
                  .antMatchers("/index.html").hasAnyRole("ADMIN","USER")
-                 .antMatchers("/get_turnos.html").hasRole("USER")
+                // .antMatchers("/get_turnos.html").hasRole("USER") // <- al parecer, aparece como una soobrescritura de los roles ( user REEMPLAZA admin? )
 
 
                  .anyRequest()

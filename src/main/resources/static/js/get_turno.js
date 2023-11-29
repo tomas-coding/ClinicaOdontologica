@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
 
       fetch(url,settings)
       .then(response => response.json())
-      .then(data => {
+      .then(async function( data ){
       //recorremos la colección de peliculas del JSON
          for(turno of data){
             //por cada pelicula armaremos una fila de la tabla
@@ -20,6 +20,19 @@ window.addEventListener('load', function () {
             let tr_id = 'tr_' + turno.id;
             turnoRow.id = tr_id;
 
+
+            let nombrePacienteId;
+            let nombreOdontologoId;
+            nombrePacienteId = await fetch(`/paciente/${turno.pacienteId}`,settings)
+            .then(response => response.json())
+            .then(data => {
+                  return data.apellido;
+            });
+            nombreOdontologoId = await fetch(`/odontologo/${turno.odontologoId}`,settings)
+            .then(response => response.json())
+            .then(data => {
+                  return data.apellido;
+            });
             //por cada pelicula creamos un boton delete que agregaremos en cada fila para poder eliminar la misma
             //dicho boton invocara a la funcion de java script deleteByKey que se encargará
             //de llamar a la API para eliminar una pelicula
@@ -44,8 +57,8 @@ window.addEventListener('load', function () {
             //como ultima columna el boton eliminar
             turnoRow.innerHTML = '<td>' + updateButton + '</td>' +
                     '<td class=\"td_matricula\">' + turno.fechaTurno + '</td>' +
-                    '<td class=\"td_nombre\">' + turno.pacienteId + '</td>' +
-                    '<td class=\"td_apellido\">' + turno.odontologoId + '</td>' +
+                    '<td class=\"td_nombre\">' + nombrePacienteId + '</td>' +
+                    '<td class=\"td_apellido\">' + nombreOdontologoId + '</td>' +
 
                     '<td>' + deleteButton + '</td>';
 

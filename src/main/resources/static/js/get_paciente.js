@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
                     '<td class=\"td_apellido\">' + paciente.apellido + '</td>' +
                     '<td class=\"td_cedula\">' + paciente.cedula + '</td>' +
                     '<td class=\"td_fecha-ingreso\">' + paciente.fechaIngreso + '</td>' +
-                    '<td class=\"td_ubicacion\">' + paciente.domicilio.localidad + paciente.domicilio.provincia + '</td>' +
+                    '<td class=\"td_ubicacion\">' + paciente.domicilio.localidad + " (" + paciente.domicilio.provincia + ')</td>' +
                     '<td class=\"td_email\">' + paciente.email + '</td>' +
 
                     '<td>' + deleteButton + '</td>';

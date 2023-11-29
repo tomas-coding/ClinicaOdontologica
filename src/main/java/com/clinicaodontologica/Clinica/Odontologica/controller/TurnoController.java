@@ -46,7 +46,7 @@ public class TurnoController {
             return ResponseEntity.ok(turnoService.guardarTurno(t));
         }
         else {
-            // Preguntar al profe
+            // Preguntar al profe si hay alguna manera de que una ResponseEntity<TurnoDTO> pueda arrojar el body en null o un error diciendo que esta fallido
             ResponseEntity<TurnoDTO> f = new ResponseEntity<>(new TurnoDTO(), HttpStatus.NOT_FOUND);
             return f;
         }
