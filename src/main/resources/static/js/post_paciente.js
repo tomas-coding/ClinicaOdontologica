@@ -18,7 +18,8 @@ window.addEventListener('load', function () {
                 numero: document.querySelector('#numero').value,
                 localidad: document.querySelector('#localidad').value,
                 provincia: document.querySelector('#provincia').value,
-            }
+            },
+            email: document.getElementById('email').value,
 
         };
         console.log(formData);

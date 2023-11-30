@@ -1,12 +1,16 @@
-window.addEventListener('load', function () {
 
+window.addEventListener('load', function () {
+    
     //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
     //los datos que el usuario cargará de la nueva pelicula
     const formulario = document.querySelector('#add_new_odontologo');
+    
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
     event.preventDefault();
+    const toastLiveExample = document.getElementById('liveToast')
+    
        //creamos un JSON que tendrá los datos de la nueva película
         const formData = {
             matricula: document.querySelector('#matricula').value,
@@ -37,6 +41,8 @@ window.addEventListener('load', function () {
                  document.querySelector('#response').innerHTML = successAlert;
                  document.querySelector('#response').style.display = "block";
                  resetUploadForm();
+                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+                toastBootstrap.show()               
 
             })
             .catch(error => {
@@ -51,6 +57,7 @@ window.addEventListener('load', function () {
                      //se dejan todos los campos vacíos por si se quiere ingresar otra pelicula
                      resetUploadForm();})
     });
+    
 
 
     function resetUploadForm(){
@@ -68,4 +75,5 @@ window.addEventListener('load', function () {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();
+    
 });

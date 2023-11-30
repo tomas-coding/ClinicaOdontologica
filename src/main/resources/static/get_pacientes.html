@@ -82,21 +82,60 @@
          id="div_paciente_updating">
       <form id="update_paciente_form">
         <div class="form-group">
-          <label >Id:</label>
-          <input type="text" class="form-control" id="paciente_id" readonly>
-        </div>
+          <label class="control-label" for="id">Nombre: </label>
+          <input type="text" class="form-control" id="id"
+                 placeholder="Ingrese el nombre"
+                 name="id" required></input>
+      </div>
         <div class="form-group">
-          <label >Matricula:</label>
-          <input type="text" class="form-control" placeholder="matricula" id="matricula">
-        </div>
-        <div class="form-group">
-          <label >Nombre:</label>
-          <input type="text" class="form-control" placeholder="nombre" id="nombre">
-        </div>
-        <div class="form-group">
-          <label >Apellido:</label>
-          <input type="text" class="form-control" placeholder="apellido" id="apellido">
-        </div>
+          <label class="control-label" for="nombre">Nombre: </label>
+          <input type="text" class="form-control" id="nombre"
+                 placeholder="Ingrese el nombre"
+                 name="nombre" required></input>
+      </div>
+      <div class="form-group">
+          <label class="control-label" for="apellido">Apellido: </label>
+          <input type="text" class="form-control" id="apellido"
+                 placeholder="Ingrese el apellido"
+                 name="apellido" required></input>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label" for="cedula">Cédula: </label>
+          <input type="text" class="form-control" id="cedula"
+                 placeholder="Ingrese la cédula"
+                 name="cedula" required></input>
+      </div>
+      <div class="form-group">
+          <label class="control-label" for="calle">Calle </label>
+          <input type="text" class="form-control" id="calle"
+                 placeholder="Ingrese la calle"
+                 name="calle" required></input>
+      </div>
+      <div class="form-group">
+          <label class="control-label" for="apellido">Numero </label>
+          <input type="text" class="form-control" id="numero"
+                 placeholder="Ingrese el apellido"
+                 name="numero" required></input>
+      </div>
+      <div class="form-group">
+          <label class="control-label" for="localidad">Localidad </label>
+          <input type="text" class="form-control" id="localidad"
+                 placeholder="Ingrese la localidad"
+                 name="localidad" required></input>
+      </div>
+      <div class="form-group">
+          <label class="control-label" for="provincia">Provincia </label>
+          <input type="text" class="form-control" id="provincia"
+                 placeholder="Ingrese la provincia"
+                 name="provincia" required></input>
+      </div>
+      <div class="form-group">
+          <label class="control-label" for="email">Email </label>
+          <input type="email" class="form-control" id="email"
+                 placeholder="Ingrese el Email"
+                 name="email" required></input>
+      </div>
 
 
         <button type="submit" class="btn btn-primary">Modificar</button>
