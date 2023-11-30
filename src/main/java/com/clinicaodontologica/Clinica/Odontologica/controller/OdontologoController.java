@@ -1,4 +1,5 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
+import com.clinicaodontologica.Clinica.Odontologica.dto.TurnoDTO;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,15 @@ public class OdontologoController {
 
       @PostMapping
       public ResponseEntity<Odontologo> registrarOdontologo(@RequestBody Odontologo odontologo){
+            // En el caso de probarlo con postman
+            if(
+                        odontologo.getApellido() == null ||
+                        odontologo.getMatricula() == null ||
+                        odontologo.getNombre() == null
+            ){
+                  ResponseEntity<Odontologo> f = new ResponseEntity<>(new Odontologo(), HttpStatus.BAD_REQUEST);
+                  return f;
+            }
             return ResponseEntity.ok(odontologoService.registrarOdontologo(odontologo));
       }
 

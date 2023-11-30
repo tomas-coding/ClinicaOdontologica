@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
 
         //invocamos utilizando la función fetch la API peliculas con el método PUT que modificará
         //la película que enviaremos en formato JSON
-        const url = '/odontologo/actualizar';
+        const url = '/odontologo';
         const settings = {
             method: 'PUT',
             headers: {
@@ -40,7 +40,7 @@ window.addEventListener('load', function () {
     //se encarga de llenar el formulario con los datos de la pelicula
     //que se desea modificar
     function findBy(id) {
-          const url = '/odontologo/buscar'+"/"+id;
+          const url = '/odontologo'+"/"+id;
           const settings = {
               method: 'GET'
           }
