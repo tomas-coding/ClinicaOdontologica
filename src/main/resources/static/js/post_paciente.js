@@ -70,6 +70,7 @@ window.addEventListener('load', function () {
         document.querySelector('#numero').value = "";
         document.querySelector('#localidad').value = "";
         document.querySelector('#provincia').value = "";
+        document.querySelector('#email').value = "";
 
     }
 
