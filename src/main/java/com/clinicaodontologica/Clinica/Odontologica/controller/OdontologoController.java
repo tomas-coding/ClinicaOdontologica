@@ -1,5 +1,6 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 import com.clinicaodontologica.Clinica.Odontologica.dto.TurnoDTO;
+import com.clinicaodontologica.Clinica.Odontologica.exception.ResorceNotFoundException;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -57,12 +58,12 @@ public class OdontologoController {
       }
 
       @DeleteMapping("{id}")
-      public ResponseEntity<String> eliminarPorId (@PathVariable Long id){
+      public ResponseEntity<String> eliminarPorId (@PathVariable Long id) throws ResorceNotFoundException {
             Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
             if (odontologoBuscado.isPresent()){
                   odontologoService.eliminarOdontologo(id);
                   return ResponseEntity.ok("Odontologo eliminado con exito");
             }
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Odontologo no encontrado");
+            throw new ResorceNotFoundException("No se pudo eliminar el odontologo, debido a que no existe");
       }
 }

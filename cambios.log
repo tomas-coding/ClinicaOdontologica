@@ -262,3 +262,4 @@
 [2023-11-17 16:25:33] [ INFO ] [OdontologoDAOH2:106] iniciando la operacion de actualizado de un paciente 
 [2023-11-17 16:25:36] [ INFO ] [OdontologoDAOH2:53] iniciando la operacion de buscado por id 33455
 >>>>>>> 4c2dad58616a5ff37ab50568e2794f197483b755
+[2023-11-30 15:58:00] [ ERROR] [GlobalException:17] NO FUNCA TOMI
