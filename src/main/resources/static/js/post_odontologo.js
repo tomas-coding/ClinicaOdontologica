@@ -2,7 +2,7 @@
 window.addEventListener('load', function () {
     
     //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
-    //los datos que el usuario cargará de la nueva pelicula
+    //los datos que el usuario cargará de el nuevo odontologo
     const formulario = document.querySelector('#add_new_odontologo');
     
 
@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
             apellido: document.querySelector('#apellido').value,
 
         };
-        //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
+        //invocamos utilizando la función fetch la API odontologos con el método POST que guardará
         //la película que enviaremos en formato JSON
         const url = '/odontologo';
         const settings = {
@@ -32,7 +32,7 @@ window.addEventListener('load', function () {
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
-                 //Si no hay ningun error se muestra un mensaje diciendo que la pelicula
+                 //Si no hay ningun error se muestra un mensaje diciendo que el odontologo
                  //se agrego bien
                  let successAlert = '<div class="alert alert-success alert-dismissible">' +
                      '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
@@ -46,7 +46,7 @@ window.addEventListener('load', function () {
 
             })
             .catch(error => {
-                    //Si hay algun error se muestra un mensaje diciendo que la pelicula
+                    //Si hay algun error se muestra un mensaje diciendo que el odontologo
                     //no se pudo guardar y se intente nuevamente
                     let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
                                      '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
@@ -54,7 +54,7 @@ window.addEventListener('load', function () {
 
                       document.querySelector('#response').innerHTML = errorAlert;
                       document.querySelector('#response').style.display = "block";
-                     //se dejan todos los campos vacíos por si se quiere ingresar otra pelicula
+                     //se dejan todos los campos vacíos por si se quiere ingresar otro odontologo
                      resetUploadForm();})
     });
     
@@ -71,7 +71,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/peliculaList.html") {
+        } else if (pathname == "/odontologoList.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();
