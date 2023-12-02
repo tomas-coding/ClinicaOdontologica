@@ -24,6 +24,22 @@ public class Odontologo {
     @JsonIgnore
     private Set<Turno> turnos= new HashSet<>();
 
+    public Odontologo() {
+    }
+
+    public Odontologo(String matricula, String nombre, String apellido) {
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Odontologo(Long id, String matricula, String nombre, String apellido) {
+        this.id = id;
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public Long getId() {
         return id;
     }

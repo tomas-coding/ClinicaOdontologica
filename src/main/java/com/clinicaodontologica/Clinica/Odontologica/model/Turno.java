@@ -22,6 +22,22 @@ public class Turno {
     @Column
     private LocalDate fechaTurno;
 
+    public Turno() {
+    }
+
+    public Turno(Paciente paciente, Odontologo odontologo, LocalDate fechaTurno) {
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fechaTurno = fechaTurno;
+    }
+
+    public Turno(Long id, Paciente paciente, Odontologo odontologo, LocalDate fechaTurno) {
+        this.id = id;
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fechaTurno = fechaTurno;
+    }
+
     public Long getId() {
         return id;
     }
