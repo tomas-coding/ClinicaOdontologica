@@ -14,7 +14,7 @@ public class GlobalException {
     ;
     @ExceptionHandler({ResorceNotFoundException.class})
     public ResponseEntity<String> tratamientoResorceNotFoundException(ResorceNotFoundException rnfe){
-        logger.error( "NO FUNCA TOMI" );
+        logger.error( "No funciona" );
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(rnfe.getMessage());
     }
 
