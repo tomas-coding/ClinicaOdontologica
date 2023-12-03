@@ -17,5 +17,10 @@ public class GlobalException {
         logger.error( "No funciona" );
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(rnfe.getMessage());
     }
+    @ExceptionHandler({BadRequestException.class})
+    public ResponseEntity<String> tratamientoBadRequestException(ResorceNotFoundException rnfe){
+        logger.error( "No funciona" );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(rnfe.getMessage());
+    }
 
 }

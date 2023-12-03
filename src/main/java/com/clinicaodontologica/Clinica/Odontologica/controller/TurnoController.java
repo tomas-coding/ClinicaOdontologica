@@ -2,6 +2,7 @@ package com.clinicaodontologica.Clinica.Odontologica.controller;
 
 
 import com.clinicaodontologica.Clinica.Odontologica.dto.TurnoDTO;
+import com.clinicaodontologica.Clinica.Odontologica.exception.BadRequestException;
 import com.clinicaodontologica.Clinica.Odontologica.exception.ResorceNotFoundException;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
@@ -33,7 +34,7 @@ public class TurnoController {
 
 
     @PostMapping
-    public ResponseEntity<TurnoDTO> registrarTurno(@RequestBody TurnoDTO turno){
+    public ResponseEntity<TurnoDTO> registrarTurno(@RequestBody TurnoDTO turno) throws BadRequestException {
 
         Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(turno.getPacienteId());
         Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologoId());
@@ -47,24 +48,12 @@ public class TurnoController {
             return ResponseEntity.ok(turnoService.guardarTurno(t));
         }
         else {
-            // Preguntar al profe si hay alguna manera de que una ResponseEntity<TurnoDTO> pueda arrojar el body en null o un error diciendo que esta fallido
-            ResponseEntity<TurnoDTO> f = new ResponseEntity<>(new TurnoDTO(), HttpStatus.NOT_FOUND);
-            return f;
+
+            throw new BadRequestException("no se puede crear un turno con paciente u odontologo inexistente");
         }
     }
 
-    // @PostMapping
-    // public ResponseEntity<TurnoDTO> registrarTurno(@RequestBody Turno turno){
-    //
-    //     Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(turno.getPaciente().getId());
-    //     Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
-    //     if(pacienteBuscado.isPresent()&&odontologoBuscado.isPresent()){
-    //         return ResponseEntity.ok(turnoService.guardarTurno(turno));
-    //     }
-    //     else {
-    //         return ResponseEntity.badRequest().build();
-    //     }
-    // }
+
 
     @GetMapping
     public ResponseEntity<List<TurnoDTO>> buscarTodos(){
