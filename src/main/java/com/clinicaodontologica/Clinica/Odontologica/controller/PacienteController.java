@@ -1,6 +1,7 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 
 
+import com.clinicaodontologica.Clinica.Odontologica.dto.TurnoDTO;
 import com.clinicaodontologica.Clinica.Odontologica.exception.ResorceNotFoundException;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
@@ -20,31 +21,38 @@ public class PacienteController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Paciente>> buscarPacientePorID(@PathVariable Long id){
-        return ResponseEntity.ok(pacienteService.buscarPacientePorID(id));
+    public ResponseEntity<Paciente> buscarPacientePorID(@PathVariable Long id) throws ResorceNotFoundException {
+
+        Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(id);
+        if(pacienteBuscado.isPresent()){
+            return ResponseEntity.ok(pacienteBuscado.get());
+        }
+        else{
+            throw new ResorceNotFoundException("No se pudo encontrar el paciente, debido a que no existe");
+        }
+
     }
     @PostMapping
     public  ResponseEntity<Paciente> registrarPaciente(@RequestBody Paciente paciente){
         return ResponseEntity.ok(pacienteService.registrarPaciente(paciente));
     }
     @PutMapping
-    public ResponseEntity<String> actualizarPaciente(@RequestBody Paciente paciente){
+    public ResponseEntity<String> actualizarPaciente(@RequestBody Paciente paciente) throws ResorceNotFoundException {
         Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(paciente.getId());
         if(pacienteBuscado.isPresent()) {
             pacienteService.actualizarPaciente(paciente);
             return ResponseEntity.ok("paciente actualizado");
         }else{
-            return ResponseEntity.badRequest().body("paciente no encontrado");
+            throw new ResorceNotFoundException("No se pudo acutalizar el paciente, debido a que no existe");
         }
     }
     @GetMapping("/buscar/{email}")
-    public ResponseEntity<Paciente> buscarPacientePorCorreo(@PathVariable String correo){
+    public ResponseEntity<Paciente> buscarPacientePorCorreo(@PathVariable String correo) throws ResorceNotFoundException {
         Optional<Paciente> pacienteBuscado= pacienteService.buscarPorCorreo(correo);
         if(pacienteBuscado.isPresent()) {
-
             return ResponseEntity.ok(pacienteBuscado.get());
         }else{
-            return ResponseEntity.notFound().build();
+            throw new ResorceNotFoundException("No se pudo encontrar el paciente por el correo, debido a que no existe");
         }
     }
     @DeleteMapping("{id}")
