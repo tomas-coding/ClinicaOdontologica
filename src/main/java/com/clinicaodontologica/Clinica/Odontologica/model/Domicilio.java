@@ -1,12 +1,12 @@
 package com.clinicaodontologica.Clinica.Odontologica.model;
 
-import lombok.Data;
+
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "domicilios")
-@Data
+
 public class Domicilio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,25 @@ public class Domicilio {
     private String localidad;
     @Column
     private String provincia;
+
+
+    public Domicilio(String calle, Integer numero, String localidad, String provincia) {
+        this.calle = calle;
+        this.numero = numero;
+        this.localidad = localidad;
+        this.provincia = provincia;
+    }
+
+    public Domicilio(Long id, String calle, Integer numero, String localidad, String provincia) {
+        this.id = id;
+        this.calle = calle;
+        this.numero = numero;
+        this.localidad = localidad;
+        this.provincia = provincia;
+    }
+
+    public Domicilio() {
+    }
 
     public Long getId() {
         return id;
