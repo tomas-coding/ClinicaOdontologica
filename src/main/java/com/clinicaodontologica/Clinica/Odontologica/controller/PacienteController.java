@@ -1,6 +1,7 @@
 package com.clinicaodontologica.Clinica.Odontologica.controller;
 
 
+import com.clinicaodontologica.Clinica.Odontologica.exception.ResorceNotFoundException;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import com.clinicaodontologica.Clinica.Odontologica.service.PacienteService;
@@ -47,13 +48,13 @@ public class PacienteController {
         }
     }
     @DeleteMapping("{id}")
-    public ResponseEntity<String> elimninarPaciente(@PathVariable Long id){
+    public ResponseEntity<String> elimninarPaciente(@PathVariable Long id) throws ResorceNotFoundException {
         Optional<Paciente> pacienteBuscado= pacienteService.buscarPacientePorID(id);
         if(pacienteBuscado.isPresent()){
             pacienteService.eliminarPaciente(id);
             return ResponseEntity.ok("Eliminado con exito");
         }else{
-            return ResponseEntity.notFound().build();
+            throw new ResorceNotFoundException("No se pudo eliminar el paciente, debido a que no existe");
         }
 
     }

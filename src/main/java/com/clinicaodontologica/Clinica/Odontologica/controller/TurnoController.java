@@ -2,6 +2,7 @@ package com.clinicaodontologica.Clinica.Odontologica.controller;
 
 
 import com.clinicaodontologica.Clinica.Odontologica.dto.TurnoDTO;
+import com.clinicaodontologica.Clinica.Odontologica.exception.ResorceNotFoundException;
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.clinicaodontologica.Clinica.Odontologica.model.Paciente;
 import com.clinicaodontologica.Clinica.Odontologica.model.Turno;
@@ -80,15 +81,14 @@ public class TurnoController {
         }
     }
     @DeleteMapping("{id}")
-    public ResponseEntity<String> borrarTurno(@PathVariable Long id){
+    public ResponseEntity<String> borrarTurno(@PathVariable Long id) throws ResorceNotFoundException {
         Optional<TurnoDTO> turnoDtoBuscado= turnoService.buscarTurnoPorId(id);
         if(turnoDtoBuscado.isPresent()){
             turnoService.eliminarTurno(id);
             return ResponseEntity.ok("Eliminado con exito");
         }
         else{
-            //return ResponseEntity.badRequest().body("Hay inconsistencia con la consulta para eliminar."); //404
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se pudo encontrar el turno para su eliminacion: "+id);
+            throw new ResorceNotFoundException("No se pudo eliminar el turno, debido a que no existe");
         }
     }
     @PutMapping

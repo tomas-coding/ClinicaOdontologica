@@ -1,4 +1,4 @@
-package com.clinicaodontologica.Clinica.Odontologica.testsCustom;
+package com.clinicaodontologica.Clinica.Odontologica.testsIntegracion;
 
 import com.clinicaodontologica.Clinica.Odontologica.model.Odontologo;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,8 +12,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @SpringBootTest
@@ -40,7 +40,13 @@ class TestOdontologosMVC {
                                     .content(odontologoJSON))
                         .andDo(print()).andExpect(MockMvcResultMatchers.status().isOk())
                         .andReturn();
+            o.setId(1L);
+            String odontologoTESTJSON = objectMapper.writeValueAsString(o);
 
+            // System.out.println( "ObjectMapper: " + odontologoTESTJSON );
+            // System.out.println( "Response: " + respuesta.getResponse().getContentAsString() );
+
+            assertEquals( odontologoTESTJSON, respuesta.getResponse().getContentAsString() );
       }
 
 
