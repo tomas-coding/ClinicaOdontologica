@@ -46,7 +46,7 @@ public class OdontologoServiceTest {
     @Test
     @Order(4)
     public void actualizarOdontologo(){
-        Odontologo odontologoActualizar= new Odontologo("Matricula 1att","Javier","Pignataro");
+        Odontologo odontologoActualizar= new Odontologo(1L,"Matricula 1att","Javier","Pignataro");
         odontologoService.actualizarOdontologo(odontologoActualizar);
         Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(1L);
         assertEquals("Javier",odontologoBuscado.get().getNombre());
