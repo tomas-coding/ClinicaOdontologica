@@ -37,24 +37,36 @@ public class OdontologoController {
             return ResponseEntity.ok(odontologoService.listarTodos());
       }
       @PutMapping
-      public ResponseEntity<String> actualizarOdontologo(@RequestBody Odontologo odontologo){
+      public ResponseEntity<String> actualizarOdontologo (@RequestBody Odontologo odontologo) throws ResorceNotFoundException{
             Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(odontologo.getId());
             if(odontologoBuscado.isPresent()){
                   odontologoService.actualizarOdontologo(odontologo);
                   return ResponseEntity.ok("Odontologo actualizado");
             }
             else{
-                  return ResponseEntity.badRequest().body("Odontologo no encontrado");
+                  throw new ResorceNotFoundException("No se pudo actualizar el odontologo, debido a que no existe");
             }
       }
       @GetMapping("/{id}")
-      public ResponseEntity<Optional<Odontologo>> buscarPorID(@PathVariable Long id){
-
-            return ResponseEntity.ok(odontologoService.buscarPorId(id));
+      public ResponseEntity<Optional<Odontologo>> buscarPorID (@PathVariable Long id) throws ResorceNotFoundException{
+            Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
+            if(odontologoBuscado.isPresent()){
+                  return ResponseEntity.ok(odontologoBuscado);
+            }
+            else {
+                  throw new ResorceNotFoundException("No se pudo encontrar el odontologo, debido a que no existe");
+            }
       }
       @GetMapping("/busqueda/{matricula}")
-      public ResponseEntity<Optional<Odontologo>> buscarPorMatricula(@PathVariable String matricula){
-            return ResponseEntity.ok(odontologoService.buscarPorMatricula(matricula));
+      public ResponseEntity<Optional<Odontologo>> buscarPorMatricula(@PathVariable String matricula) throws ResorceNotFoundException{
+            Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorMatricula(matricula);
+            if (odontologoBuscado.isPresent()){
+                  return ResponseEntity.ok(odontologoBuscado);
+            }
+            else {
+                  throw new ResorceNotFoundException("No se pudo encontrar el odontologo, debido a que no existe");
+            }
+
       }
 
       @DeleteMapping("{id}")
