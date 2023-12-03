@@ -31,6 +31,28 @@ public class Paciente {
     @JsonIgnore
     private Set<Turno> turnos= new HashSet<>();
 
+    public Paciente() {
+    }
+
+    public Paciente(String nombre, String apellido, String cedula, LocalDate fechaIngreso, Domicilio domicilio, String email) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.fechaIngreso = fechaIngreso;
+        this.domicilio = domicilio;
+        this.email = email;
+    }
+
+    public Paciente(Long id, String nombre, String apellido, String cedula, LocalDate fechaIngreso, Domicilio domicilio, String email) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.fechaIngreso = fechaIngreso;
+        this.domicilio = domicilio;
+        this.email = email;
+    }
+
     public Long getId() {
         return id;
     }
