@@ -31,14 +31,16 @@ window.addEventListener('load', function () {
                   body: JSON.stringify(formData)
             }
             fetch(url,settings)
-                  .then(response => {response.json(); location.reload();
-                        setTimeout(
-                                   ()=>{},
-                                   100
-                        )
-                        const toastLiveExample = document.getElementById('liveToastModificar')
-                        const toastBootstrapModif = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                        toastBootstrapModif.show()               
+                  .then(response => {response.json();
+                        const toastLiveExample = document.getElementById('liveToastModificar');
+                        const toastBootstrapModif = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                        toastBootstrapModif.show();
+                       setTimeout(
+                                   ()=>{location.reload();},
+                                   10000
+                        );
+                        console.log( "prueba ASINCRONICA" );
+
                   })
                   .catch(
                          ()=>
