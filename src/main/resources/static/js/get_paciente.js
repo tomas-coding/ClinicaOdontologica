@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
             //de llamar a la API para eliminar una odontologo
             let deleteButton = '<button' +
                                       ' id=' + '\"' + 'btn_delete_' + paciente.id + '\"' +
-                                      ' type="button" onclick="deleteBy('+paciente.id+')" class="btn btn-danger btn_delete">' +
+                                      ' type="button" onclick="deleteBy('+paciente.id+')" class="btn btn-danger btn_delete ">' +
                                       '&times' +
                                       '</button>';
 
@@ -42,7 +42,7 @@ window.addEventListener('load', function () {
             //como primer columna pondremos el boton modificar
             //luego los datos de la odontologo
             //como ultima columna el boton eliminar
-            pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
+            pacienteRow.innerHTML = '<td style="display:flex; justify-content:center">' + updateButton + '</td>' +
                     '<td class=\"td_nombre\">' + paciente.nombre + '</td>' +
                     '<td class=\"td_apellido\">' + paciente.apellido + '</td>' +
                     '<td class=\"td_cedula\">' + paciente.cedula + '</td>' +
@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
                     '<td class=\"td_ubicacion\">' + paciente.domicilio.localidad + " (" + paciente.domicilio.provincia + ')</td>' +
                     '<td class=\"td_email\">' + paciente.email + '</td>' +
 
-                    '<td>' + deleteButton + '</td>';
+                    '<td style="display:flex; justify-content:center">' + deleteButton + '</td>';
 
         };
 
