@@ -37,9 +37,8 @@ window.addEventListener('load', function () {
                         toastBootstrapModif.show();
                        setTimeout(
                                    ()=>{location.reload();},
-                                   10000
+                                   2000
                         );
-                        console.log( "prueba ASINCRONICA" );
 
                   })
                   .catch(
