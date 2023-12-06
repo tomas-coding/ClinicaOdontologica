@@ -32,10 +32,14 @@ window.addEventListener('load', function () {
                   body: JSON.stringify(formData)
             }
             fetch(url,settings)
-                  .then(response => {response.json(); location.reload();
-                        const toastLiveExample = document.getElementById('liveToastModificar')
-                        const toastBootstrapModif = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                        toastBootstrapModif.show()               
+                  .then(response => {response.json();
+                        const toastLiveExample = document.getElementById('liveToastModificar');
+                        const toastBootstrapModif = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                        toastBootstrapModif.show();
+                       setTimeout(
+                                   ()=>{location.reload();},
+                                   2000
+                        );
                   })
                   .catch(
                          ()=>
