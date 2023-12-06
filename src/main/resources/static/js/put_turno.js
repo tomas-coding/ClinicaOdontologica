@@ -25,13 +25,26 @@ window.addEventListener('load', function () {
             }
             fetch(url,settings)
                   .then(response => {response.json();
-                        const toastLiveExample = document.getElementById('liveToastModificar');
-                        const toastBootstrapModif = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                        toastBootstrapModif.show();
-                       setTimeout(
-                                   ()=>{location.reload();},
-                                   2000
-                        );
+                        if( response.status > 400 ){
+                              // Toast Notification: ERROR!
+                                    const toastErr = document.getElementById('liveToastErr')
+                              const toastBootstrapErrModif = bootstrap.Toast.getOrCreateInstance(toastErr)
+                              toastBootstrapErrModif.show()               
+                              // setTimeout(
+                                            //            ()=>{location.reload();},
+                                            //            2000
+                                            // );
+                        }
+                        else {
+
+                              const toastLiveExample = document.getElementById('liveToastModificar');
+                              const toastBootstrapModif = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                              toastBootstrapModif.show();
+                              setTimeout(
+                                         ()=>{location.reload();},
+                                         2000
+                              );
+                        }
                   })
                   .catch(
                          ()=>
