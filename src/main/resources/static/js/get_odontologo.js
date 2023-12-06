@@ -27,12 +27,12 @@ window.addEventListener('load', function () {
                                       odontologo.id +
                                       '</button>';
 
-            odontologoRow.innerHTML = '<td>' + updateButton + '</td>' +
+            odontologoRow.innerHTML = '<td style="display:flex; justify-content:center">' + updateButton + '</td>' +
                     '<td class=\"td_matricula\">' + odontologo.matricula.toUpperCase() + '</td>' +
                     '<td class=\"td_nombre\">' + odontologo.nombre.toUpperCase() + '</td>' +
                     '<td class=\"td_apellido\">' + odontologo.apellido.toUpperCase() + '</td>' +
 
-                    '<td>' + deleteButton + '</td>';
+                    '<td style="display:flex; justify-content:center">' + deleteButton + '</td>';
 
         };
 

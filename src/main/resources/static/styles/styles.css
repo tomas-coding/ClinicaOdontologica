@@ -40,13 +40,13 @@ h1{
     display: flex;
     justify-content: center;
 }
-.btn{
+.btn-post{
     background-color: #2699fb;
     border-color: white;
     color: white;
     width: 150px !important;
 }
-.btn:hover{
+.btn-post:hover{
     background-color: white;
     border-color: white;
     color: #2699fb;

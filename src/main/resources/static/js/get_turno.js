@@ -40,12 +40,12 @@ window.addEventListener('load', function () {
                                       turno.id +
                                       '</button>';
 
-            turnoRow.innerHTML = '<td>' + updateButton + '</td>' +
+            turnoRow.innerHTML = '<td style="display:flex; justify-content:center">' + updateButton + '</td>' +
                     '<td class=\"td_matricula\">' + turno.fechaTurno + '</td>' +
                     '<td class=\"td_nombre\">' + nombrePacienteId + '</td>' +
                     '<td class=\"td_apellido\">' + nombreOdontologoId + '</td>' +
 
-                    '<td>' + deleteButton + '</td>';
+                    '<td style="display:flex; justify-content:center">' + deleteButton + '</td>';
 
         };
 
